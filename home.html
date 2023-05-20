@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <div class="main-container">
+      <h1>Welcome to the Smart Accounting System!</h1>
+      <p>Please log in to access the system.</p>
+      <p>New user, Signup here</p>
+    </div>
+  <nav>
+      <ul>
+        <li><a href="{{ url_for('admin_login') }}">Admin Login</a></li>
+        <li><a href="{{ url_for('user_login') }}">User Login</a></li>
+        <li><a href="{{ url_for('user_signup') }}">Sign up</a></li>
+      </ul>
+    </nav>
+  </body>
+</html>
