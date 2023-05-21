@@ -6,6 +6,7 @@ app.secret_key = 'anu'
 @app.route('/')
 def home():
     return render_template('home.html')
+#Admin login
 
 @app.route('/admin/login', methods=['GET', 'POST'])
 def admin_login():
@@ -18,3 +19,14 @@ def admin_login():
             return render_template('admin_login.html', error=error)
     else:
         return render_template('admin_login.html')
+
+#Admin home
+
+@app.route('/admin/home', methods=['GET', 'POST'])
+def admin_home():
+    if 'logged_in' in session and session['logged_in']:
+        return render_template('admin_home.html')
+    else:
+        return redirect('/admin/login')
+
+
